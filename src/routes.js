@@ -29,6 +29,7 @@ routes.get('/providers', ProviderController.index);
 // Agendamento do usuário
 routes.get('/appointments', AppointmentController.index);
 routes.post('/appointments', AppointmentController.store);
+routes.delete('/appointments/:id', AppointmentController.delete);
 
 // Agendamento
 routes.get('/schedule', ScheduleController.index);
