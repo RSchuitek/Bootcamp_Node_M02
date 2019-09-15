@@ -64,6 +64,12 @@ class AppointmentController {
       return res.status(400).json({ error: 'Past dates are not permitted' });
     }
 
+    if (provider_id === req.userId) {
+      return res
+        .status(400)
+        .json({ error: 'scheduling for the provider are not allowed' });
+    }
+
     // check date availability
     const checkAvailability = await Appointment.findOne({
       where: {
