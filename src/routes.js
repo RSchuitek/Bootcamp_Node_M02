@@ -18,12 +18,17 @@ routes.post('/sessions', SessionController.store);
 
 // Adicionar validação do token
 routes.use(authMiddleware);
+// Usuários
 routes.put('/users', UserController.update);
 
+// Prestador de serviços
 routes.get('/providers', ProviderController.index);
 
+// Agendamento
+routes.get('/appointments', AppointmentController.index);
 routes.post('/appointments', AppointmentController.store);
 
+// Arquivos
 routes.post('/files', upload.single('file'), FileController.store);
 
 export default routes;
