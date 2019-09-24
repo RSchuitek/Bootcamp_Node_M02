@@ -20,7 +20,7 @@ class AvailableController {
 
     const searchDate = Number(date);
 
-    const appointmens = await Appointmen.findAll({
+    const appointmens = await Appointmen.finddAll({
       where: {
         provider_id: req.params.providerId,
         canceled_at: null,
